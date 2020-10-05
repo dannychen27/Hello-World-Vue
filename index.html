@@ -5,20 +5,23 @@
     </head>
     <body>
         <div id="app">
-            <!-- This prints out our message. -->
+            <!-- This lets you dynamically update the message. via an input box. -->
             {{ message }}
-
-            <!-- This prints out the same message in a text box.-->
             <input v-model="message">
 
+            <!-- How is adding type="text" help? -->
+            {{ greeting }}
+            <input type="text" v-model="greeting">
         </div>
 
         <script>
             new Vue({
                 el: '#app',
                 data: {
+                    // These are default values.
                     // This must be single quotes to work!
-                    message: 'Hello, Vue.js!'
+                    message: 'Hello, Vue.js!',
+                    greeting: 'Hello, World!'
                 }
             })
         </script> 
