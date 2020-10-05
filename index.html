@@ -5,14 +5,20 @@
     </head>
     <body>
         <div id="app">
+            <!-- This prints out our message. -->
             {{ message }}
+
+            <!-- This prints out the same message in a text box.-->
+            <input v-model="message">
+
         </div>
 
         <script>
             new Vue({
                 el: '#app',
                 data: {
-                    message: "Hello, Vue.js!"
+                    // This must be single quotes to work!
+                    message: 'Hello, Vue.js!'
                 }
             })
         </script> 
