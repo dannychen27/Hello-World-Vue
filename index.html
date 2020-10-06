@@ -9,9 +9,23 @@
             {{ message }}
             <input v-model="message">
 
-            <!-- How is adding type="text" help? -->
+            <!-- How does adding type="text" help? -->
             {{ greeting }}
             <input type="text" v-model="greeting">
+
+            <!-- A list of items: "name in data.characters" is OK too. -->
+            <!-- <ul>
+                <li v-for="character in characters">
+                    name: {{ character.name }} origin: {{ character.origin }}
+                </li>
+            </ul> -->
+
+            <div v-for="character in characters">
+                <br>
+                name: {{ character.name }} origin: {{ character.origin }}
+                <!-- <h1>name: {{ character.name }}</h1>
+                <h3>origin: {{ character.origin }}</h3> -->
+            </div>
         </div>
 
         <script>
@@ -21,7 +35,12 @@
                     // These are default values.
                     // This must be single quotes to work!
                     message: 'Hello, Vue.js!',
-                    greeting: 'Hello, World!'
+                    greeting: 'Hello, World!',
+                    characters: [
+                        {name: 'Sterling Knight', origin: 'Miami'},
+                        {name: 'Demi Lavato', origin: 'Spain'},
+                        {name: 'Ross Lynch', origin: 'Chicago'}
+                    ]
                 }
             })
         </script> 
