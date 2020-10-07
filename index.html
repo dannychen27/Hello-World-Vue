@@ -14,24 +14,18 @@
             <input type="text" v-model="greeting">
 
             <!-- A list of items: "name in data.characters" is OK too. -->
-            <!-- <ul>
-                <li v-for="character in characters">
-                    name: {{ character.name }} origin: {{ character.origin }}
-                </li>
-            </ul> -->
-
-            <!-- see https://vuejs.org/v2/guide/list.html -->
+            <!-- This helped get "index" working: https://vuejs.org/v2/guide/list.html -->
             <div v-for="(character, index) in characters">
                 <br>
                 name: {{ character.name }} origin: {{ character.origin }}
 
-                <!-- I don't know how to avoid hardcoding images in my website. -->
+                <!-- TODO: Figure out a way to avoid hardcoding images in my website. -->
                 <!-- <img src="{{ character.image }}" width="200" /> -->
                 <img src="./img/kendall_schmidt.jpg" alt="./img/sterling_knight.jpg" width="150">
 
-                <!-- Add a button.-->
+                <!-- TODO: After you click button, it should reset all boxes to ''-->
                 {{ character.fans }}
-                <input id=index v-model="newFan" placeholder="Add Fan"/>
+                <input v-model="newFan" placeholder="Add Fan"/>
                 <button v-on:click="addFan(index, newFan)">Add Fan</button>
 
                 <!-- <h1>name: {{ character.name }}</h1>
