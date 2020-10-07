@@ -20,13 +20,19 @@
                 </li>
             </ul> -->
 
-            <div v-for="character in characters">
+            <!-- see https://vuejs.org/v2/guide/list.html -->
+            <div v-for="(character, index) in characters">
                 <br>
                 name: {{ character.name }} origin: {{ character.origin }}
 
                 <!-- I don't know how to avoid hardcoding images in my website. -->
                 <!-- <img src="{{ character.image }}" width="200" /> -->
                 <img src="./img/kendall_schmidt.jpg" alt="./img/sterling_knight.jpg" width="150">
+
+                <!-- Add a button.-->
+                {{ character.fans }}
+                <input id=index v-model="newFan" placeholder="Add Fan"/>
+                <button v-on:click="addFan(index, newFan)">Add Fan</button>
 
                 <!-- <h1>name: {{ character.name }}</h1>
                 <h3>origin: {{ character.origin }}</h3> -->
@@ -43,16 +49,20 @@
                 el: '#app',
                 data: {
                     // These are default values.
-                    // This must be single quotes to work!
-                    message: 'Hello, Vue.js!',
-                    greeting: 'Hello, World!',
+                    message: "Hello, Vue.js!",
+                    greeting: "Hello, World!",
                     characters: [
-                        {name: 'Sterling Knight', origin: 'Miami', image: "./img/stering_knight.jpg"},
-                        {name: 'Kendall Schmidt', origin: 'Spain', image: "./img/kendall_schmidt.jpg"},
-                        {name: 'Ross Lynch', origin: 'Chicago', image: "./img/ross_lynch.jpg"}
+                        {name: "Sterling Knight", origin: "Miami", image: "./img/stering_knight.jpg", fans: "A, B"},
+                        {name: "Kendall Schmidt", origin: "Spain", image: "./img/kendall_schmidt.jpg", fans: "C, D"},
+                        {name: "Ross Lynch", origin: "Chicago", image: "./img/ross_lynch.jpg", fans: "E, F"}
                     ]
+                },
+                methods: {
+                    addFan(index, newFan) {
+                        this.characters[index].fans = this.characters[index].fans + ", " + newFan
+                    }
                 }
-            })
+            });
         </script> 
     </body>
 </html>
