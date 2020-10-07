@@ -53,7 +53,12 @@
                 },
                 methods: {
                     addFan(index, newFan) {
-                        this.characters[index].fans = this.characters[index].fans + ", " + newFan
+                        if (newFan) {
+                            this.characters[index].fans += ", " + newFan
+                        } else {
+                            // Removes "undefined" fans.
+                            this.characters[index].fans += ", " + " "
+                        }
                     }
                 }
             });
