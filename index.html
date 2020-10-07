@@ -23,10 +23,20 @@
             <div v-for="character in characters">
                 <br>
                 name: {{ character.name }} origin: {{ character.origin }}
+
+                <!-- I don't know how to avoid hardcoding images in my website. -->
+                <!-- <img src="{{ character.image }}" width="200" /> -->
+                <img src="./img/kendall_schmidt.jpg" alt="./img/sterling_knight.jpg" width="150">
+
                 <!-- <h1>name: {{ character.name }}</h1>
                 <h3>origin: {{ character.origin }}</h3> -->
             </div>
         </div>
+
+
+        <!-- https://big-time-rush.fandom.com/wiki/Kendall_Schmidt?file=Kendall_Schmidt_BTR_Paparazzo.jpg -->
+        <!-- https://www.hollywoodreporter.com/news/teen-beach-movies-ross-lynch-746018 -->
+        <!-- https://i.pinimg.com/originals/5d/31/54/5d3154b6cb6eadafc7a52d5396a05c32.png sterling knight-->
 
         <script>
             new Vue({
@@ -37,9 +47,9 @@
                     message: 'Hello, Vue.js!',
                     greeting: 'Hello, World!',
                     characters: [
-                        {name: 'Sterling Knight', origin: 'Miami'},
-                        {name: 'Demi Lavato', origin: 'Spain'},
-                        {name: 'Ross Lynch', origin: 'Chicago'}
+                        {name: 'Sterling Knight', origin: 'Miami', image: "./img/stering_knight.jpg"},
+                        {name: 'Kendall Schmidt', origin: 'Spain', image: "./img/kendall_schmidt.jpg"},
+                        {name: 'Ross Lynch', origin: 'Chicago', image: "./img/ross_lynch.jpg"}
                     ]
                 }
             })
