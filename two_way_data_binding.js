@@ -13,4 +13,4 @@ new Vue({
             console.log("You entered your age");
         }
     }
-})
+});
