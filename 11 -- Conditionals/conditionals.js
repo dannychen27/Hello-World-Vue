@@ -4,10 +4,6 @@ new Vue({
         error: false,
         success: false
     },
-    methods: {
-
-    },
-    computed: {
-        
-    }
+    methods: {},
+    computed: {}
 });
