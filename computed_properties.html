@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Computed Properties</title>
+        <link href="computed_properties.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Computed Properties</h1>
+
+            <!-- For a full list of key modifiers:
+            https://vuejs.org/v2/guide/events.html#Key-Codes 
+            -->
+            <button v-on:click="a++">Add to A</button>
+            <button v-on:click="b++">Add to B</button>
+            <p>A - {{ a }}</p>
+            <p>B - {{ b }}</p>
+            <!-- We omit parentheses, so that when JS runs, it'll search for
+                these methods in "computed" instead of "methods." 
+            Computed properties are more efficient because they only watch for
+            variable changes, and run methods when needed.
+            This means now only one of the funcions gets called. -->
+            <p>Age + A = {{ addToA }}</p>
+            <p>Age + B = {{ addToB }}</p>
+            <p>Total = {{ addToA + addToB }}</p>
+        </div>
+        <script src="computed_properties.js"></script>
+    </body>
+</html>
