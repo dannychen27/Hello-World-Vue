@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Keyboard Events</title>
+        <link href="keyboard_events.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Keyboard Events</h1>
+
+            <!-- For a full list of key modifiers:
+            https://vuejs.org/v2/guide/events.html#Key-Codes 
+            -->
+            <label>Name:</label>
+            <input type="text" v-on:keyup.enter="logName" />
+            <label>Age:</label>
+            <input type="text" v-on:keyup.alt.enter="logAge" />
+        </div>
+        <script src="keyboard_events.js"></script>
+    </body>
+</html>
