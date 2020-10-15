@@ -4,9 +4,7 @@ new Vue({
     el: '#vue-app',
     data: {
         name: 'Danny',
-        job: 'Software Artist',
-        // website: "https://www.google.com/",
-        websiteTag: '<a href="https://www.google.com/">Google Website</a>'
+        job: 'Software Artist'
     },
     methods: {
         // output a greeting to the DOM
