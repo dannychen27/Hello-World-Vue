@@ -5,5 +5,11 @@ new Vue({
     data: {
         name: 'Danny',
         job: 'Software Artist'
-    }
+    },
+    methods: {
+        // output a greeting to the DOM
+        greet: function () {
+            return "Good Morning"
+        }
+    },
 });
