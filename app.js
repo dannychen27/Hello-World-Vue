@@ -3,6 +3,7 @@
 new Vue({
     el: '#vue-app',
     data: {
-        name: 'Danny'
+        name: 'Danny',
+        job: 'Software Artist'
     }
 });
