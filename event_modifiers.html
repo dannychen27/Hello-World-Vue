@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Event Modifiers</title>
+        <link href="event_modifiers.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>On Click Events</h1>
+            
+            <!-- On Click Buttons -->
+            <button v-on:click.once="add(1)">Add a Year</button>
+            <button v-on:click="subtract(1)">Subtract a Year</button>
+
+            <button v-on:dblclick="add(10)">Add 10 Years</button>
+            <button v-on:dblclick="subtract(10)">Subtract 10 Years</button>
+
+            <p>My age is {{ age }}</p>
+
+            <!-- Like e.preventDefault() in js, prevent won't actually go to google website -->
+            <a v-on:click.prevent="click" href="https://www.google.com/">The Google Website</a>
+        </div>
+        <script src="event_modifiers.js"></script>
+    </body>
+</html>
