@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <link href="events.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Events</h1>
+            
+            <!-- Buttons -->
+            <button v-on:click="age++">Add a Year</button>
+            <button v-on:click="age--">Subtract a Year</button>
+
+            <p>My age is {{ age }}</p>
+        </div>
+        <script src="events.js"></script>
+    </body>
+</html>
