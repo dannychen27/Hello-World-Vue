@@ -1,67 +1,15 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Vue Tutorial</title>
-        <script src="./js/vue.js"></script>
+        <meta charset="utf-8">
+        <title>VueJS Tutorials</title>
+        <link href="styles.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue"></script>
     </head>
     <body>
-        <div id="app">
-            <!-- This lets you dynamically update the message. via an input box. -->
-            {{ message }}
-            <input v-model="message">
-
-            <!-- How does adding type="text" help? -->
-            {{ greeting }}
-            <input type="text" v-model="greeting">
-
-            <!-- A list of items: "name in data.characters" is OK too. -->
-            <!-- This helped get "index" working: https://vuejs.org/v2/guide/list.html -->
-            <div v-for="(character, index) in characters">
-                <br>
-                name: {{ character.name }} origin: {{ character.origin }}
-
-                <!-- TODO: Figure out a way to avoid hardcoding images in my website. -->
-                <!-- <img src="{{ character.image }}" width="200" /> -->
-                <img src="./img/kendall_schmidt.jpg" alt="./img/sterling_knight.jpg" width="150">
-
-                <!-- TODO: After you click button, it should reset all boxes to ''-->
-                {{ character.fans }}
-                <input v-model="newFan" placeholder="Add Fan"/>
-                <button v-on:click="addFan(index, newFan)">Add Fan</button>
-
-                <!-- <h1>name: {{ character.name }}</h1>
-                <h3>origin: {{ character.origin }}</h3> -->
-            </div>
+        <div id="vue-app">
+            <h1>{{ name }}</h1>
         </div>
-
-
-        <!-- https://big-time-rush.fandom.com/wiki/Kendall_Schmidt?file=Kendall_Schmidt_BTR_Paparazzo.jpg -->
-        <!-- https://www.hollywoodreporter.com/news/teen-beach-movies-ross-lynch-746018 -->
-        <!-- https://i.pinimg.com/originals/5d/31/54/5d3154b6cb6eadafc7a52d5396a05c32.png sterling knight-->
-
-        <script>
-            new Vue({
-                el: '#app',
-                data: {
-                    // These are default values.
-                    message: "Hello, Vue.js!",
-                    greeting: "Hello, World!",
-                    characters: [
-                        {name: "Sterling Knight", origin: "Miami", image: "./img/stering_knight.jpg", fans: "A, B"},
-                        {name: "Kendall Schmidt", origin: "Spain", image: "./img/kendall_schmidt.jpg", fans: "C, D"},
-                        {name: "Ross Lynch", origin: "Chicago", image: "./img/ross_lynch.jpg", fans: "E, F"}
-                    ]
-                },
-                methods: {
-                    addFan(index, newFan) {
-                        if (newFan) {
-                            this.characters[index].fans += ", " + newFan
-                        } else {
-                            // Removes "undefined" fans.
-                            this.characters[index].fans += ", " + " "
-                        }
-                    }
-                }
-            });
-        </script> 
+        <script src="app.js"></script>
     </body>
 </html>
